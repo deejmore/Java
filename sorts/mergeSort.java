@@ -1,3 +1,4 @@
+package sorts;
 public void mergeSort (int[] list, int lowIndex, int highIndex) {
 	if (lowIndex == highIndex)
 		return;

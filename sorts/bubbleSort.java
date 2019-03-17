@@ -1,3 +1,4 @@
+package sorts;
 public int[] bubbleSort (int[] list) {
 	int i, j, temp = 0;
 	for (i = 0; i < list.length - 1; i++) {

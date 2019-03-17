@@ -1,3 +1,4 @@
+package sorts;
 // using Array
 public int[] insertionSort (int[] list) {
 	int i, j, key, temp;

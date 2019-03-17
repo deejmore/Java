@@ -1,3 +1,4 @@
+package sorts;
 public int[] selectionSort (int[] list) {
 	int i, j, minValue, minIndex, temp = 0;
 	for (i = 0; i < list.length; i++) {
