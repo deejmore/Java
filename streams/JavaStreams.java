@@ -74,8 +74,9 @@ public class JavaStreams {
 		rows1.close();
 	}
 
+	
 	// 11. Stream rows from CSV file, parse data from rows
-	private static void exampleleStreamRowsFromCSVFileParseDataFromRows() throws IOException {
+	private static void exampleStreamRowsFromCSVFileParseDataFromRows() throws IOException {
 		Stream<String> rows2 = Files.lines(Paths.get("data.txt"));
 		rows2.map(x -> x.split(",")).filter(x -> x.length == 3).filter(x -> Integer.parseInt(x[1]) > 15)
 				.forEach(x -> System.out.println(x[0] + "  " + x[1] + "  " + x[2]));
@@ -83,7 +84,7 @@ public class JavaStreams {
 	}
 
 	// 12. Stream rows from CSV file, store fields in HashMap
-	private static void exampleStreamFromCSVfileStoreFieldsinHashMap() throws IOException {
+	private static void exampleStreamFromCSVFileStoreFieldsinHashMap() throws IOException {
 		Stream<String> rows3 = Files.lines(Paths.get("data.txt"));
 		Map<String, Integer> map = new HashMap<>();
 		map = rows3.map(x -> x.split(",")).filter(x -> x.length == 3).filter(x -> Integer.parseInt(x[1]) > 15)
@@ -145,13 +146,13 @@ public class JavaStreams {
 			exampleStreamRowsFromTextFileSaveToList();
 		}
 		case 10: {
-			exampleStreamRowsFromCSVFile();
+			exampleStreamRowsFromCSVFileAndCount();
 		}
 		case 11: {
-			exampleStreamFromCSVFileAndCount();
+			exampleStreamRowsFromCSVFileParseDataFromRows();
 		}
 		case 12: {
-			exampleStreamRowsFromCSVFileParseData();
+			 exampleStreamFromCSVFileStoreFieldsinHashMap();
 		}
 		case 13: {
 			exampleStreamReductionSum();
@@ -166,20 +167,8 @@ public class JavaStreams {
 			break;
 		}
 
-	}
 
-	private static void exampleStreamFromCSVFileAndCount() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	private static void exampleStreamRowsFromCSVFileParseData() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	private static void exampleStreamRowsFromCSVFile() {
-		// TODO Auto-generated method stub
-		
 	}
 }
