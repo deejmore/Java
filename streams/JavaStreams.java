@@ -1,4 +1,5 @@
 package streams;
+
 import java.lang.String;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +9,101 @@ import java.nio.file.*;
 import java.io.IOException;
 
 public class JavaStreams {
+
+	public static void main(String[] args) throws IOException {
+
+	int number = 0;
+	do
+	{
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter a number to run an example:");
+		number = in.nextInt();
+		System.out.println("Running Example:" + number);
+		switch (number) {
+		case 0: {
+			System.out.println("End of examples.");
+			break;
+		}
+		case 1: {
+			exampleIntegerStream();
+			System.out.println("End of Example Integer Stream");
+			break;
+		}
+		case 2: {
+			exampleIntegerStreamWithSkip();
+			System.out.println("End of Example Integer Stream With Skip");
+			break;
+		}
+		case 3: {
+			exampleIntegerStreamWithSum();
+			System.out.println("End of Example Integer Stream With Sum");
+			break;
+		}
+		case 4: {
+			exampleStreamSortedFindFirst();
+			System.out.println("End of Example Stream Sorted Find First");
+			break;
+		}
+		case 5: {
+			exampleStreamFromArraySortedFiltered();
+			System.out.println("End of Example Stream From Array Sorted Filtered");
+			break;
+		}
+		case 6: {
+			exampleStreamSquaresofIntegerArray();
+			System.out.println("End of Example Stream Square of Integer Array");
+			break;
+		}
+		case 7: {
+			exampleStreamFromListFilter();
+			System.out.println("End of Example From List Filter");
+			break;
+		}
+		case 8: {
+			exampleStreamFromTextFileSortFilter();
+			System.out.println("End of Example From Text File Sort Filter");
+			break;
+		}
+		case 9: {
+			exampleStreamRowsFromTextFileSaveToList();
+			System.out.println("End of Example Streams From Text File Save To List");
+			break;
+		}
+		case 10: {
+			exampleStreamRowsFromCSVFileAndCount();
+			System.out.println("End of Example From CSV File and Count");
+			break;
+		}
+		case 11: {
+			exampleStreamRowsFromCSVFileParseDataFromRows();
+			System.out.println("End of Example Stream Rwos From CSV File Parse Data From Rows");
+			break;
+		}
+		case 12: {
+			exampleStreamFromCSVFileStoreFieldsinHashMap();
+			System.out.println("End of Example Stream From CSV File Store Fields in Hash Map");
+			break;
+		}
+		case 13: {
+			exampleStreamReductionSum();
+			System.out.println("End of Example Stream Reduction Sum");
+			break;
+		}
+		case 14: {
+			exampleStreamtReductionSummaryStatistics();
+			System.out.println("End of Example Stream Reduction Summary Statistics");
+			break;
+		}
+		default: {
+			System.out.println("Please enter a number to run a sample");
+
+		}
+			break;
+		}
+	}
+	while (number != 0);
+
+	}
 
 	// 1. Integer Stream
 	private static void exampleIntegerStream() {
@@ -24,7 +120,7 @@ public class JavaStreams {
 	}
 
 	// 3. Integer Stream with sum
-	private static void exampleIntegerStreatWithSum() {
+	private static void exampleIntegerStreamWithSum() {
 		System.out.println(IntStream.range(1, 5).sum());
 		System.out.println();
 	}
@@ -74,7 +170,6 @@ public class JavaStreams {
 		rows1.close();
 	}
 
-	
 	// 11. Stream rows from CSV file, parse data from rows
 	private static void exampleStreamRowsFromCSVFileParseDataFromRows() throws IOException {
 		Stream<String> rows2 = Files.lines(Paths.get("data.txt"));
@@ -107,68 +202,4 @@ public class JavaStreams {
 		System.out.println(summary);
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		Scanner in = new Scanner(System.in);
-		int num = in.nextInt();
-		System.out.println("Running Example:" + num);
-		switch (num) {
-		case 0:
-		{
-			System.out.println("End of examples.");
-			break;
-		}
-		case 1: {
-			exampleIntegerStream();
-		}
-		case 2: {
-			exampleIntegerStreamWithSkip();
-		}
-		case 3: {
-			exampleIntegerStreatWithSum();
-		}
-		case 4: {
-			exampleStreamSortedFindFirst();
-		}
-		case 5: {
-			exampleStreamFromArraySortedFiltered();
-		}
-		case 6: {
-			exampleStreamSquaresofIntegerArray();
-		}
-		case 7: {
-			exampleStreamFromListFilter();
-		}
-		case 8: {
-			exampleStreamFromTextFileSortFilter();
-		}
-		case 9: {
-			exampleStreamRowsFromTextFileSaveToList();
-		}
-		case 10: {
-			exampleStreamRowsFromCSVFileAndCount();
-		}
-		case 11: {
-			exampleStreamRowsFromCSVFileParseDataFromRows();
-		}
-		case 12: {
-			 exampleStreamFromCSVFileStoreFieldsinHashMap();
-		}
-		case 13: {
-			exampleStreamReductionSum();
-		}
-		case 14: {
-			exampleStreamtReductionSummaryStatistics();
-		}
-		default: {
-			System.out.println("No matching example.");
-
-		}
-			break;
-		}
-
-
-
-
-	}
 }
