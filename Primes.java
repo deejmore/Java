@@ -2,20 +2,45 @@
 //--------------------------------------------
 // version 3: break, add to list
 import java.util.ArrayList;
+import java.util.Scanner;
 
 //version 1
 public class Primes {
 
 	public static void main(String[] args) {
-		int max = 10;
+
+		int max = 100;
+		System.out.println("Prime numbers less than 100:");
 		for (int x = 2; x <= max; x++) {
-			boolean isPrime = true;
-			for (int y = 2; y < x; y++)
-				if (x % y == 0)
-					isPrime = false;
-			if (isPrime)
-				System.out.println(x);
+			if (isPrime(x))
+				System.out.print(" " + x);
 		}
+
+		System.out.println();
+		System.out.println("Check a number: ");
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+		if (isPrime(num))
+			System.out.println("prime:" + num);
+
+	}
+
+	public static boolean isPrime(int number)
+	{
+		boolean isPrime = true;
+		if ((number == 0) | (number == 1))
+		{
+			isPrime = false;
+		}
+		else
+		{
+		for(int divisor = 2; divisor < number; divisor++) {
+		    if (number % divisor == 0) {
+		        isPrime = false;
+		    }
+		}
+		}
+		return isPrime;
 	}
 
 }

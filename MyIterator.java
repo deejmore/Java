@@ -12,10 +12,12 @@ public class MyIterator {
 		cars.add("Mercedes");
 		cars.add("Toyota");
 		
+		System.out.println("Number of cars:" + cars.size());
+		
 		// for loop
 		System.out.println("For Loop:");
 		for (int i = 0; i < cars.size(); i++) {
-			System.out.print(cars.get(i) + " ");
+			System.out.print(i + " " + cars.get(i) + " ");
 		}
 		
 		// advanced for loop
@@ -28,7 +30,7 @@ public class MyIterator {
 		System.out.println("\n\nWhile Loop:");
 		int i = 0;
 		while (i < cars.size()) {
-			System.out.print(cars.get(i++) + " ");
+			System.out.print(i + " " + cars.get(i++) + " ");
 		}
 		
 		// Iterator (supports hasNext, next, remove)
